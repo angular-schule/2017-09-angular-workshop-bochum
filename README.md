@@ -36,6 +36,7 @@ Nach der Installation musst Du eine neue Konsole starten!
 
 ```
 npm install -g windows-build-tools
+--> NUR FÜR WINDOWS!
 ```
 
 Die Angular CLI ist das offizielle Build-Tool für Angular. Mit folgendem Befehl kannst Du die CLI installieren:
