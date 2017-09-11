@@ -95,6 +95,6 @@ Bei Fragen wende dich einfach direkt an das Angular-Schule-Team:
 
 <hr>
 
-### &copy; 2017 http://angular.schule, Stand: 10.07.2017
+### &copy; 2017 http://angular.schule, Stand: 11.09.2017
 
 
