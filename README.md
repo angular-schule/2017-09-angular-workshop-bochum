@@ -1,7 +1,5 @@
 <img src="http://assets.angular.schule/logo-angular-power-workshop.png">
 
-<hr>
-
 #### **von Ferdinand Malcher und Johannes Hoppe**
 
 <hr>
