@@ -1,4 +1,6 @@
-<img src="http://assets.angular.schule/logo-angular-power-workshop.png">
+<img src="https://user-images.githubusercontent.com/640639/30429546-2ef12aa8-9958-11e7-937d-c2c824d5f55f.png" align="right" height="60"><img src="http://assets.angular.schule/logo-angular-power-workshop.png" width="80%">
+
+<hr>
 
 #### **von Ferdinand Malcher und Johannes Hoppe**
 
