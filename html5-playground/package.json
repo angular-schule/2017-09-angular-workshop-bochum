@@ -1,0 +1,14 @@
+{
+  "name": "html5-playground",
+  "version": "1.0.0",
+  "description": "Our first playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Johannes Hoppe <johannes.hoppe@haushoppe-its.de> (http://haushoppe-its.de/)",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "roboto-fontface": "^0.8.0"
+  }
+}

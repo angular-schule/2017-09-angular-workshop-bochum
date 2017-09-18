@@ -1,7 +1,12 @@
 /* immer Inline-Stylesheets vermeiden! */
 
 body {
-  font-family: sans-serif
+  font-family: 'Roboto';
+}
+
+h1 {
+  font-weight: 200;
+  font-size: 4em;
 }
 
 p {
