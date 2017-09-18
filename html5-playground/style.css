@@ -12,3 +12,15 @@ h1 {
 p {
   color: darkgray;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a span {
+  font-family: 'Roboto';
+}

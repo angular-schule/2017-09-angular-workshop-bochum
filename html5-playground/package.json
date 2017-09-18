@@ -9,6 +9,7 @@
   "author": "Johannes Hoppe <johannes.hoppe@haushoppe-its.de> (http://haushoppe-its.de/)",
   "license": "UNLICENSED",
   "dependencies": {
+    "font-awesome": "^4.7.0",
     "roboto-fontface": "^0.8.0"
   }
 }
