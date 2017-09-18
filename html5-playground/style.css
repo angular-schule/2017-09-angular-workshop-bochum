@@ -1,0 +1,9 @@
+/* immer Inline-Stylesheets vermeiden! */
+
+body {
+  font-family: sans-serif
+}
+
+p {
+  color: darkgray;
+}
