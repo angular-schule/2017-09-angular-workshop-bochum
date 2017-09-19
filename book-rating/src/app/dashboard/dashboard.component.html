@@ -3,7 +3,14 @@
   [book]="b"></br-book>
 
 
-<p [class.redText]="books.length > 1">
+<!-- <ng-container *ngFor="let b of books;
+                      index as i;
+                      even as e">
 
-  TEST
-</p>
+  {{ i + 1 }}.
+
+  <br-book
+    [book]="b"
+    [even]="e"
+    ></br-book>
+</ng-container> -->
