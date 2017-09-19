@@ -1,8 +1,3 @@
-class Test {
-
-    constructor(public id: number) {   
-        console.log('Deine Zahl', this.id);
-    }
-}
+import { Test } from "./test";
 
 let test = new Test(42)
