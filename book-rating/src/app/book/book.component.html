@@ -9,12 +9,15 @@
     <img src="//ng-buch.de/avatar/{{ book.rating }}">
     -->
 
-
     <h2>{{ book.title }} - <small>{{ book.rating }}</small></h2>
+
+    <i class="fa fa-star" *ngFor="let s of stars"></i>
 
     <p>
       {{ book.desciption }}
     </p>
+
+    <button (click)="book.rating = 9">9 Sterne!</button>
 
   </div>
 </div>
