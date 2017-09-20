@@ -39,13 +39,13 @@ describe('BookComponent', () => {
 
   });
 
-  it('rating a book up should emit event', async(() => {
+  it('rating a book up should emit event', () => {
     component.rated.subscribe((b) => {
       expect(b).toBe(component.book);
     });
 
     component.rateUp();
-  }));
+  });
 
   it('should display the book title', () => {
     const heading = fixture.debugElement.query(By.css('h2'));
