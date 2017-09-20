@@ -9,4 +9,16 @@ export class Book {
   // toString() {
   //   return this.title;
   // }
+
+  rateUp() {
+    if (this.rating < 5) {
+      this.rating++;
+    }
+  }
+
+  rateDown() {
+    if (this.rating > 0) {
+      this.rating--;
+    }
+  }
 }
