@@ -1,8 +1,9 @@
-import { Book } from '../shared/book';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
+import { Book } from '../shared/book';
+import { ShortenPipe } from '../shorten.pipe';
 import { BookComponent } from './book.component';
 
 describe('BookComponent', () => {
@@ -11,7 +12,7 @@ describe('BookComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookComponent ],
+      declarations: [ BookComponent, ShortenPipe ],
       schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();

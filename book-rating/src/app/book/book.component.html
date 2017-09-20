@@ -14,7 +14,7 @@
     <i class="fa fa-star" *ngFor="let s of stars"></i>
 
     <p>
-      {{ book.description }}
+      {{ book.description | shorten:15 }}
     </p>
 
     <button (click)="rateUp()" class="btn btn-secondary fa fa-thumbs-up rate-up-btn"></button>
