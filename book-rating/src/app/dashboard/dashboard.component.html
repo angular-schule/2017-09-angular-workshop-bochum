@@ -1,6 +1,7 @@
 <br-book
   *ngFor="let b of books"
-  [book]="b"></br-book>
+  [book]="b"
+  (rated)="reorderBooks($event)"></br-book>
 
 
 <!-- <ng-container *ngFor="let b of books;
