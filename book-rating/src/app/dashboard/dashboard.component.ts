@@ -8,6 +8,7 @@ import { Book } from '../shared/book';
 })
 export class DashboardComponent implements OnInit {
   books: Book[];
+  d = new Date();
 
   constructor() { }
 

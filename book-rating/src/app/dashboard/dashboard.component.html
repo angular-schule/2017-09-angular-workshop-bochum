@@ -1,3 +1,10 @@
+<p>
+  <span class="badge badge-secondary">
+    <i class="fa fa-calendar"></i>
+    {{ d | date:'longDate' }}
+  </span>
+</p>
+
 <br-book
   *ngFor="let b of books"
   [book]="b"
