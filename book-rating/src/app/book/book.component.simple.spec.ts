@@ -25,15 +25,4 @@ describe('BookComponent', () => {
     comp.rateDown();
     expect(book.rateDown).toHaveBeenCalled();
   });
-
-  it('rating a book up should emit event', (done) => {
-    comp.book = new Book('', '', '');
-
-    comp.rated.subscribe((b) => {
-      expect(b).toBe(comp.book);
-      done();
-    });
-
-    comp.rateUp();
-  });
 });
