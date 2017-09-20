@@ -17,7 +17,8 @@
       {{ book.description }}
     </p>
 
-    <button (click)="book.rating = 9">9 Sterne!</button>
+    <button (click)="rateUp()" class="btn btn-secondary fa fa-thumbs-up"></button>
+    <button (click)="rateDown()" class="btn btn-secondary fa fa-thumbs-down"></button>
 
   </div>
 </div>
