@@ -5,6 +5,21 @@
   </span>
 </p>
 
+
+<div>
+  ISBN:
+  <input name="isbn" #isbn><br>
+
+  Titel:
+  <input name="title" #title><br>
+
+  Beschreibung:
+  <textarea name="description" #description></textarea><br>
+  <button (click)="add(isbn, title, description)">Hinzufügen</button>
+</div>
+
+
+
 <br-book
   *ngFor="let b of books"
   [book]="b"
