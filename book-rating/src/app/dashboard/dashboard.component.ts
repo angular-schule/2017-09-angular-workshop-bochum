@@ -22,26 +22,9 @@ export class DashboardComponent implements OnInit {
     this.reorderBooks();
   }
 
-  add(isbn: HTMLInputElement, title: HTMLInputElement, description: HTMLInputElement) {
-    const book = new Book(
-      isbn.value,
-      title.value,
-      description.value
-    );
-
+  createBook(book: Book) {
     this.books.push(book);
     this.reorderBooks();
-
-    // isbn.value = '';
-    // title.value = '';
-    // description.value = '';
-
-    this.clearFields(isbn, title, description);
-
-  }
-
-  private clearFields(...fields: HTMLInputElement[]) {
-    fields.forEach(f => f.value = '');
   }
 
   reorderBooks() {
