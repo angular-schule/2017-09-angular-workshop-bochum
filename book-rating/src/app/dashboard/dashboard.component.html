@@ -5,19 +5,36 @@
   </span>
 </p>
 
+<div class="card mb-4 bg-light">
+  <div class="card-header">
+    <i class="fa fa-plus"></i>
+    <strong>Buch hinzufügen</strong>
+  </div>
+  <div class="card-body">
+    <!-- $event.preventDefault() verhindert "hartes" Abschicken des Formulars
+      noch nicht schön! -->
+    <form (submit)="add(isbn, title, description); $event.preventDefault()">
+      <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input class="form-control" name="isbn" #isbn>
+      </div>
 
-<div>
-  ISBN:
-  <input name="isbn" #isbn><br>
+      <div class="form-group">
+        <label for="title">Titel</label>
+        <input class="form-control" name="title" #title>
+      </div>
 
-  Titel:
-  <input name="title" #title><br>
+      <div class="form-group">
+        <label for="description">Beschreibung</label>
+        <textarea class="form-control" name="description" #description></textarea>
+      </div>
 
-  Beschreibung:
-  <textarea name="description" #description></textarea><br>
-  <button (click)="add(isbn, title, description)">Hinzufügen</button>
+      <div class="form-group">
+        <button type="submit" class="btn btn-danger">Hinzufügen</button>
+      </div>
+    </form>
+  </div>
 </div>
-
 
 
 <br-book
