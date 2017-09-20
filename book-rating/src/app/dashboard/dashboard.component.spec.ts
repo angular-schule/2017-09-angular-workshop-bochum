@@ -34,10 +34,11 @@ describe('DashboardComponent', () => {
   it('should show the date', () => {
     const dateBox = fixture.debugElement.query(By.css('.date-box')).nativeElement;
 
-
+    // mit echter DatePipe
     expect(dateBox.textContent)
-      .toContain(new DatePipe('de').transform(component.d, 'longDate'));
+      .toContain(new DatePipe('de').transform(new Date(), 'longDate'));
 
+    // mit fest definiertem Datum
     component.d = new Date('2017-07-15 00:00:00');
     fixture.detectChanges();
     expect(dateBox.textContent).toContain('15. Juli 2017');
