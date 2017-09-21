@@ -11,6 +11,7 @@ export class BookComponent implements OnInit {
   @Input() even: boolean;
 
   @Output() rated = new EventEmitter<Book>();
+  @Output() deleted = new EventEmitter<Book>();
 
 
   ngOnInit() {
@@ -24,6 +25,10 @@ export class BookComponent implements OnInit {
   rateDown() {
     this.book.rateDown();
     this.rated.emit(this.book);
+  }
+
+  delete() {
+    this.deleted.emit(this.book);
   }
 
   get stars() {

@@ -23,4 +23,12 @@ export class BookStoreService {
         )
       );
   }
+
+  delete(isbn: string): Observable<any> {
+    return this.http.
+      delete(`${ this.backendUrl }/book/${ isbn }`,
+      {
+        responseType: 'text'
+      });
+  }
 }

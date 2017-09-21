@@ -23,12 +23,16 @@ export class DashboardComponent implements OnInit {
 
   }
 
-createBook(book: Book) {
+  createBook(book: Book) {
     this.books.push(book);
     this.reorderBooks();
   }
 
   reorderBooks() {
     this.books.sort((a, b) => b.rating - a.rating);
+  }
+
+  deleteBook(book: Book) {
+    this.store.delete(book.isbn).subscribe();
   }
 }
