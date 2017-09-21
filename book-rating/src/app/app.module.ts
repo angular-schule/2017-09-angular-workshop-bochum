@@ -1,3 +1,4 @@
+import { BookStoreService } from './shared/book-store.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -25,7 +26,8 @@ import { ShortenPipe } from './shorten.pipe';
     HttpClientModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'de' } // ACHTUNG: Nur bis Angular 4
+    { provide: LOCALE_ID, useValue: 'de' }, // ACHTUNG: Nur bis Angular 4
+    BookStoreService
   ],
   bootstrap: [AppComponent]
 })

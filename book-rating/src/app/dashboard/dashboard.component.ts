@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { BookStoreService } from '../shared/book-store.service';
 import { Component, OnInit } from '@angular/core';
+
 import { Book } from '../shared/book';
-import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'br-dashboard',
@@ -12,19 +12,10 @@ export class DashboardComponent implements OnInit {
   books: Book[] = [];
   d = new Date();
 
-  constructor(private http: HttpClient) { }
+  constructor(private store: BookStoreService) { }
 
   ngOnInit() {
-
-    this.http.get<any[]>('http://api.angular.schule/books')
-      .map(rawBooks => rawBooks.map(
-        rawBook => new Book(
-          rawBook.isbn,
-          rawBook.title,
-          rawBook.description,
-          rawBook.rating)
-        )
-      )
+    this.store.getAll()
       .subscribe(books => {
         this.books = books;
         this.reorderBooks();
