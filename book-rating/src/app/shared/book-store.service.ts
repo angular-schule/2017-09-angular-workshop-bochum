@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { Book } from './book';
+import { BookResponse } from './book-response';
 
 @Injectable()
 export class BookStoreService {
@@ -12,7 +13,7 @@ export class BookStoreService {
     @Inject('BACKEND_URL') private backendUrl: string) { }
 
   getAll(): Observable<Book[]> {
-    return this.http.get<any[]>(`${ this.backendUrl }/books`)
+    return this.http.get<BookResponse[]>(`${ this.backendUrl }/books`)
       .map(rawBooks => rawBooks.map(
           rawBook => new Book(
             rawBook.isbn,
