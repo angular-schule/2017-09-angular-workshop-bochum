@@ -27,5 +27,7 @@
     <button (click)="delete()"
       class="btn btn-secondary fa fa-trash"></button>
 
+    <a [routerLink]="['/book', book.isbn]" class="btn btn-secondary">Details</a>
+
   </div>
 </div>

@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { CreateBookComponent } from './create-book/create-book.component';
 import { ShortenPipe } from './shorten.pipe';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ShortenPipe } from './shorten.pipe';
     DashboardComponent,
     BookComponent,
     CreateBookComponent,
-    ShortenPipe
+    ShortenPipe,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
