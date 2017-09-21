@@ -8,7 +8,7 @@
     <form (ngSubmit)="add()" #bookForm="ngForm">
 
       <div class="form-group">
-        <label for="isbn">ISBN</label>
+        <label for="isbn">ISBN *</label>
         <input class="form-control" name="isbn"
           [(ngModel)]="book.isbn"
           required
@@ -22,7 +22,7 @@
       </div>
 
       <div class="form-group">
-        <label for="title">Titel</label>
+        <label for="title">Titel *</label>
         <input class="form-control" name="title"
           [(ngModel)]="book.title"
           required
