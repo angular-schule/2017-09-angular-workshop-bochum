@@ -17,8 +17,12 @@
       {{ book.description | shorten:15 }}
     </p>
 
-    <button (click)="rateUp()" class="btn btn-secondary fa fa-thumbs-up rate-up-btn"></button>
-    <button (click)="rateDown()" class="btn btn-secondary fa fa-thumbs-down"></button>
+    <button
+      [disabled]="book.rating > 4"
+      (click)="rateUp()" class="btn btn-secondary fa fa-thumbs-up rate-up-btn"></button>
+    <button
+      [disabled]="book.rating < 1"
+      (click)="rateDown()" class="btn btn-secondary fa fa-thumbs-down"></button>
 
   </div>
 </div>
