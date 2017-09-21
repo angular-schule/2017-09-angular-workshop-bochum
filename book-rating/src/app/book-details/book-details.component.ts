@@ -1,5 +1,8 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/pluck';
+import 'rxjs/add/operator/switchMap';
 
 import { Book } from './../shared/book';
 import { BookStoreService } from './../shared/book-store.service';
@@ -11,17 +14,26 @@ import { BookStoreService } from './../shared/book-store.service';
 })
 export class BookDetailsComponent implements OnInit {
 
-  isbn: string;
-  book: Book = Book.empty();
+  book$: Observable<Book>;
 
   constructor(
     private route: ActivatedRoute,
     private store: BookStoreService) { }
 
   ngOnInit() {
-    this.isbn = this.route.snapshot.params.isbn;
-    this.store.getSingle(this.isbn)
-      .subscribe(b => this.book = b);
+    // let isbn = this.route.snapshot.params.isbn;
+
+    // this.route.params
+    //   // .map(params => params.isbn)
+    //   .pluck('isbn')
+    //   .subscribe((isbn: string) => this.book$ = this.store.getSingle(isbn));
+
+    this.book$ = this.route.params
+      .pluck('isbn')
+      .switchMap((isbn: string) => this.store.getSingle(isbn));
+
+
+
   }
 
 }

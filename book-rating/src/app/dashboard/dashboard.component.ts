@@ -16,11 +16,13 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.store.getAll()
-      .subscribe(books => {
-        this.books = books;
-        this.reorderBooks();
-      });
-
+      .subscribe(
+        books => {
+          this.books = books;
+          this.reorderBooks();
+        },
+        err => console.log(err)
+      );
   }
 
   createBook(book: Book) {
