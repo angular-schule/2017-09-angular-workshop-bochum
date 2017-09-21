@@ -24,6 +24,16 @@ export class BookStoreService {
       );
   }
 
+  getSingle(isbn: string): Observable<Book> {
+    return this.http.get<BookResponse>(`${this.backendUrl}/book/${isbn}`)
+      .map(rawBook => new Book(
+        rawBook.isbn,
+        rawBook.title,
+        rawBook.description,
+        rawBook.rating)
+      );
+  }
+
   delete(isbn: string): Observable<any> {
     return this.http.
       delete(`${ this.backendUrl }/book/${ isbn }`,
