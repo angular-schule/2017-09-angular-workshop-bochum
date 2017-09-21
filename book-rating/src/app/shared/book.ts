@@ -6,9 +6,10 @@ export class Book {
     public rating = 0
   ) { }
 
-  // toString() {
-  //   return this.title;
-  // }
+  // factory method
+  static empty(): Book {
+    return new Book('', '', '');
+  }
 
   rateUp() {
     if (this.rating < 5) {

@@ -6,26 +6,13 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   templateUrl: './create-book.component.html',
   styleUrls: ['./create-book.component.scss']
 })
-export class CreateBookComponent implements OnInit {
+export class CreateBookComponent {
 
+  book = Book.empty();
   @Output() bookCreated = new EventEmitter<Book>();
 
-  ngOnInit() {
+  add() {
+    this.bookCreated.emit(this.book);
+    this.book = Book.empty();
   }
-
-  add(isbn: HTMLInputElement, title: HTMLInputElement, description: HTMLInputElement) {
-    const book = new Book(
-      isbn.value,
-      title.value,
-      description.value
-    );
-
-    this.bookCreated.emit(book);
-    this.clearFields(isbn, title, description);
-  }
-
-  private clearFields(...fields: HTMLInputElement[]) {
-    fields.forEach(f => f.value = '');
-  }
-
 }
