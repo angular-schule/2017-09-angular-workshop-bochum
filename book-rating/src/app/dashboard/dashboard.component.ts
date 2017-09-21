@@ -1,5 +1,7 @@
-import { AnimationKeyframe, Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'br-dashboard',
@@ -7,22 +9,30 @@ import { Book } from '../shared/book';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  books: Book[];
+  books: Book[] = [];
   d = new Date();
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.books = [
-      new Book('000', 'Angular', 'Grundlagen, fortgeschrittene Techniken...', 5),
-      new Book('111', 'AngularJS', 'Eine praktische Einführung...', 4),
-      new Book('111', 'Testbuch', 'Eine praktische Einführung...', 5)
-    ];
 
-    this.reorderBooks();
+    this.http.get<any[]>('http://api.angular.schule/books')
+      .map(rawBooks => rawBooks.map(
+        rawBook => new Book(
+          rawBook.isbn,
+          rawBook.title,
+          rawBook.description,
+          rawBook.rating)
+        )
+      )
+      .subscribe(books => {
+        this.books = books;
+        this.reorderBooks();
+      });
+
   }
 
-  createBook(book: Book) {
+createBook(book: Book) {
     this.books.push(book);
     this.reorderBooks();
   }
